@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+
+std::string Japonizar(const std::string& palabra) {
+    std::string palabra_japonizada = palabra;
+
+    for (char& c : palabra_japonizada) {
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o') {
+            c = 'u';
+        }
+    }
+
+    return palabra_japonizada;
+}
+
+int main() {
+    std::string nombre;
+    std::cout << "Ingresa un nombre: ";
+    std::cin >> nombre;
+
+    std::string nombre_japonizado = Japonizar(nombre);
+    std::cout << "Palabra 'japonizada': " << nombre_japonizado << std::endl;
+
+    return 0;
+}
